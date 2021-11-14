@@ -1,5 +1,7 @@
 let buttonColors = ['red', 'blue', 'green', 'yellow']
 let gamePattern = []
+let userClickedPattern = []
+
 const nextSequence = () =>{
     let randomNumber =Math.floor(Math.random()*4)
     console.log(randomNumber)
@@ -13,9 +15,9 @@ const randomColorGen = () =>{
     gamePattern.push(randomChosenColor)
 }
 
-const arrayRead = () =>{
-    for(let i=0; i<gamePattern.length; i++){
-        console.log(gamePattern[i])
+const arrayRead = (arrName) =>{
+    for(let i=0; i<arrName.length; i++){
+        console.log(arrName[i])
     }
 }
 
@@ -35,6 +37,7 @@ const flashButtonRed = () => {
     setTimeout(() => {
         $('#btn1').removeClass('pressed')
     }, 200)
+    userClickedPattern.push('red')
 }
 const flashButtonGreen = () => {
     var greenSound = new Audio('sounds/green.mp3')
@@ -43,6 +46,7 @@ const flashButtonGreen = () => {
     setTimeout(() => {
         $('#btn2').removeClass('pressed')
     }, 200)
+    userClickedPattern.push('green')
 }
 const flashButtonBlue = () => {
     var blueSound = new Audio('sounds/blue.mp3')
@@ -51,6 +55,7 @@ const flashButtonBlue = () => {
     setTimeout(() => {
         $('#btn3').removeClass('pressed')
     }, 200)
+    userClickedPattern.push('blue')
 }
 const flashButtonYellow = () => {
     var yellowSound = new Audio('sounds/yellow.mp3')
@@ -59,4 +64,5 @@ const flashButtonYellow = () => {
     setTimeout(() => {
         $('#btn4').removeClass('pressed')
     }, 200)
+    userClickedPattern.push('yellow')
 }
